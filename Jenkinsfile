@@ -5,7 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/AntiHete/Jenkins.git', credentialsId: '113ab4c5c0c99274e9e0f38a0a653c1bee'
+                    url: 'https://github.com/AntiHete/Jenkins.git', credentialsId: '033e015d-f51b-4ae1-8cf7-09fe320c5d0d'
             }
         }
         

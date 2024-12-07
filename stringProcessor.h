@@ -1,5 +1,6 @@
 #ifndef STRING_PROCESSOR
 #define STRING_PROCESSOR
+#include <stddef.h>
 #include <stdint.h>
 #include <stdbool.h>
 #include <malloc.h>
@@ -9,19 +10,73 @@
 #define STRING_MAX 512ull
 const int32_t get_str(const char const* msg, char* str, const int32_t limit)
 {
-    //paste your solution here
+    if (!msg || !str || limit <= 0) {
+        return -1; // Error: invalid parameters
+    }
+
+    printf("%s", msg);
+
+    // Read the input from stdin
+    if (fgets(str, limit, stdin) == NULL) {
+        return -2; // Error: input failure
+    }
+
+    // Remove trailing newline, if present
+    size_t len = strlen(str);
+    if (len > 0 && str[len - 1] == '\n') {
+        str[len - 1] = '\0';
+        len--;
+    }
+    return (int32_t)len; // Return the length of the input string
 }
 const size_t strlenn(const char* str)
 {
-    //paste your solution here
+    if (str == NULL) {
+        return 0; // Return 0 for null pointers
+    }
+
+    const char* ptr = str;
+    while (*ptr != '\0') {
+        ptr++;
+    }
+
+    return (size_t)(ptr - str);
 }
 void strcopy(char* fStr, char* sStr, size_t until)
 {
-    //paste your solution here
+    if (!fStr || !sStr || until == 0) {
+        return; // Handle invalid inputs
+    }
+
+    size_t i;
+    for (i = 0; i < until && sStr[i] != '\0'; i++) {
+        fStr[i] = sStr[i]; // Copy characters
+    }
+
+    // Ensure null-termination
+    if (i < until) {
+        fStr[i] = '\0';
+    }
+    else {
+        fStr[until - 1] = '\0';
+    }
 }
 int32_t strcmpp(const char* fStr, const char* sStr)
 {
-    //paste your solution here
+    if (!fStr || !sStr) {
+        return (fStr == sStr) ? 0 : (fStr ? 1 : -1); // Handle NULL pointers
+    }
+
+    while (*fStr != '\0' && *sStr != '\0') {
+        if (*fStr != *sStr) {
+            return (int32_t)(unsigned char)(*fStr) - (int32_t)(unsigned char)(*sStr);
+        }
+        fStr++;
+        sStr++;
+    }
+
+    // Compare null terminators if one string ends earlier
+    return (int32_t)(unsigned char)(*fStr) - (int32_t)(unsigned char)(*sStr);
 }
 char* strcatt(char* fStr, const char* sStr)
 {
