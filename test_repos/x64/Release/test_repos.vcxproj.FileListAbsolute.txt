@@ -1,0 +1,3 @@
+D:\Проги для КПИ\3 Курс\1 Сем\CП kursova\AntiHete\Jenkins\x64\Release\gtest.pdb
+D:\Проги для КПИ\3 Курс\1 Сем\CП kursova\AntiHete\Jenkins\x64\Release\gtest_main.pdb
+D:\Проги для КПИ\3 Курс\1 Сем\CП kursova\AntiHete\Jenkins\test_repos\x64\Release\test_rep.A9F5781E.Up2Date

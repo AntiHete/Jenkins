@@ -1,0 +1,6 @@
+﻿  pch.cpp
+  test.cpp
+D:\Проги для КПИ\3 Курс\1 Сем\CП kursova\AntiHete\Jenkins\stringProcessor.h(11,34): warning C4114: Множественное использование одного и того же квалификатора типа.
+  (компиляция исходного файла "/test.cpp")
+  
+  test_repos.vcxproj -> D:\Проги для КПИ\3 Курс\1 Сем\CП kursova\AntiHete\Jenkins\x64\Release\test_repos.exe
